@@ -28,6 +28,8 @@ jobs:
             sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
             sudo systemctl restart nginx
             sudo apt-get update
+            sudo ufw allow 'Nginx Full' || true
             sudo ufw allow 443 || true
+            sudo ufw allow 80 || true
             sudo DEBIAN_FRONTEND=noninteractive apt-get install -y certbot python3-certbot-nginx
             sudo certbot --nginx -d aprido-api.duckdns.org --non-interactive --agree-tos -m apridoilham@gmail.com --redirect || true
