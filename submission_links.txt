@@ -1,0 +1,11 @@
+=========================================
+DATA UNTUK PENGUMPULAN SUBMISSION DICODING
+=========================================
+
+1. Tautan Repositori GitHub:
+   https://github.com/apridoilham/forum-api
+
+2. Tautan Aplikasi (Base URL / IP Server):
+   http://103.23.199.87
+
+=========================================
