@@ -17,6 +17,10 @@ class UserLogin {
     if (!username.match(/^[\w]+$/)) {
       throw new Error('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
     }
+
+    if (username.length > 50) {
+      throw new Error('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
+    }
   }
 }
 
