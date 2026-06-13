@@ -26,6 +26,7 @@ jobs:
             pm2 restart forum-api
             sudo cp nginx.conf /etc/nginx/sites-available/default
             sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+            sudo rm -f /etc/nginx/sites-enabled/forum-api /etc/nginx/sites-available/forum-api
             sudo systemctl restart nginx
             sudo apt-get update
             sudo iptables -P INPUT ACCEPT
