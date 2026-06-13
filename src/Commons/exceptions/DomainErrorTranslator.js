@@ -1,0 +1,26 @@
+class DomainErrorTranslator {
+  static translate(error) {
+    return DomainErrorTranslator._directories.get(error.message) || error;
+  }
+}
+
+DomainErrorTranslator._directories = new Map([
+  ['REGISTER_USER.NOT_CONTAIN_NEEDED_PROPERTY', new Error('tidak dapat membuat user baru karena properti yang dibutuhkan tidak ada')],
+  ['REGISTER_USER.NOT_MEET_DATA_SPECIFICATION', new Error('tidak dapat membuat user baru karena tipe data tidak sesuai')],
+  ['REGISTER_USER.USERNAME_LIMIT_CHAR', new Error('tidak dapat membuat user baru karena karakter username melebihi batas limit')],
+  ['REGISTER_USER.USERNAME_CONTAIN_FORBIDDEN_CHAR', new Error('tidak dapat membuat user baru karena username mengandung karakter terlarang')],
+  ['USER_LOGIN.NOT_CONTAIN_NEEDED_PROPERTY', new Error('harus mengirimkan username dan password')],
+  ['USER_LOGIN.NOT_MEET_DATA_SPECIFICATION', new Error('username dan password harus string')],
+  ['REFRESH_AUTHENTICATION_USE_CASE.NOT_CONTAIN_REFRESH_TOKEN', new Error('harus mengirimkan token refresh')],
+  ['REFRESH_AUTHENTICATION_USE_CASE.PAYLOAD_NOT_MEET_DATA_SPECIFICATION', new Error('refresh token harus string')],
+  ['DELETE_AUTHENTICATION_USE_CASE.NOT_CONTAIN_REFRESH_TOKEN', new Error('harus mengirimkan token refresh')],
+  ['DELETE_AUTHENTICATION_USE_CASE.PAYLOAD_NOT_MEET_DATA_SPECIFICATION', new Error('refresh token harus string')],
+  ['CREATE_THREAD.NOT_CONTAIN_NEEDED_PROPERTY', new Error('tidak dapat membuat thread baru karena properti yang dibutuhkan tidak ada')],
+  ['CREATE_THREAD.NOT_MEET_DATA_SPECIFICATION', new Error('tidak dapat membuat thread baru karena tipe data tidak sesuai')],
+  ['CREATE_COMMENT.NOT_CONTAIN_NEEDED_PROPERTY', new Error('tidak dapat membuat komentar baru karena properti yang dibutuhkan tidak ada')],
+  ['CREATE_COMMENT.NOT_MEET_DATA_SPECIFICATION', new Error('tidak dapat membuat komentar baru karena tipe data tidak sesuai')],
+  ['CREATE_REPLY.NOT_CONTAIN_NEEDED_PROPERTY', new Error('tidak dapat membuat balasan baru karena properti yang dibutuhkan tidak ada')],
+  ['CREATE_REPLY.NOT_MEET_DATA_SPECIFICATION', new Error('tidak dapat membuat balasan baru karena tipe data tidak sesuai')],
+]);
+
+module.exports = DomainErrorTranslator;
