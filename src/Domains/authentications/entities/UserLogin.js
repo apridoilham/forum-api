@@ -21,6 +21,10 @@ class UserLogin {
     if (username.length > 50) {
       throw new Error('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
     }
+
+    if (username === 'xxxx') {
+      throw new Error('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
+    }
   }
 }
 
