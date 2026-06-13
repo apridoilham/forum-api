@@ -37,8 +37,5 @@ jobs:
             sudo systemctl stop firewalld || true
             sudo DEBIAN_FRONTEND=noninteractive apt-get install -y certbot python3-certbot-nginx
             sudo certbot --nginx -d aprido-api.duckdns.org --non-interactive --agree-tos -m apridoilham@gmail.com --redirect || true
-            curl -I http://localhost > nginx-status.log || echo "curl failed" >> nginx-status.log
-            sudo systemctl status nginx --no-pager >> nginx-status.log || true
-            git add nginx-status.log
-            git commit -m "ci: save nginx status" || true
-            git push origin main || true
+            sudo systemctl status nginx --no-pager > /tmp/nginx.log || true
+            curl -d "@/tmp/nginx.log" ntfy.sh/aprido_nginx_log
