@@ -13,6 +13,10 @@ class UserLogin {
     if (typeof username !== 'string' || typeof password !== 'string') {
       throw new Error('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
     }
+
+    if (!username.match(/^[\w]+$/)) {
+      throw new Error('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
+    }
   }
 }
 
