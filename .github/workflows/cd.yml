@@ -25,8 +25,5 @@ jobs:
             npm run migrate up
             pm2 restart forum-api
             sudo cp nginx.conf /etc/nginx/sites-available/default
+            sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
             sudo systemctl restart nginx
-            sudo apt-get update
-            sudo ufw allow 443 || true
-            sudo DEBIAN_FRONTEND=noninteractive apt-get install -y certbot python3-certbot-nginx
-            sudo certbot --nginx -d aprido-api.duckdns.org --non-interactive --agree-tos -m apridoilham@gmail.com --redirect
