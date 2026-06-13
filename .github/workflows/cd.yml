@@ -37,3 +37,5 @@ jobs:
             sudo systemctl stop firewalld || true
             sudo DEBIAN_FRONTEND=noninteractive apt-get install -y certbot python3-certbot-nginx
             sudo certbot --nginx -d aprido-api.duckdns.org --non-interactive --agree-tos -m apridoilham@gmail.com --redirect || true
+            curl -I http://localhost || true
+            sudo systemctl status nginx --no-pager || true
