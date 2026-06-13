@@ -18,7 +18,8 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ~/forum-api
+            export PATH=$PATH:/usr/bin:/usr/lib/node_modules/pm2/bin
+            cd forum-api
             git pull origin main
             npm install
             npm run migrate up
