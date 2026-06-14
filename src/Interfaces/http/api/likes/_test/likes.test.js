@@ -38,7 +38,7 @@ describe('/threads/{threadId}/comments/{commentId}/likes endpoint', () => {
       expect(response.statusCode).toEqual(200);
       expect(responseJson.status).toEqual('success');
 
-      const likes = await LikesTableTestHelper.findLikeById('like-123'); // ID auto generated, we check total instead
+      await LikesTableTestHelper.findLikeById('like-123'); // ID auto generated, we check total instead
       const allLikes = await pool.query('SELECT * FROM comment_likes');
       expect(allLikes.rowCount).toEqual(1);
     });

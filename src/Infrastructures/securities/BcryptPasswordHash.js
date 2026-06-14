@@ -1,4 +1,3 @@
-const bcrypt = require('bcrypt');
 const PasswordHash = require('./PasswordHash');
 const AuthenticationError = require('../../Commons/exceptions/AuthenticationError');
 

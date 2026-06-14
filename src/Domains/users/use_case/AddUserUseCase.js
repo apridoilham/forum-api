@@ -1,5 +1,4 @@
-const RegisterUser = require('../../users/entities/RegisterUser');
-const RegisteredUser = require('../../users/entities/RegisteredUser');
+const RegisterUser = require('../entities/RegisterUser');
 
 class AddUserUseCase {
   constructor({ userRepository, passwordHash }) {

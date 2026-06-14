@@ -1,6 +1,5 @@
 const AuthenticationRepository = require('../../Domains/authentications/AuthenticationRepository');
 const InvariantError = require('../../Commons/exceptions/InvariantError');
-const NotFoundError = require('../../Commons/exceptions/NotFoundError');
 
 class AuthenticationRepositoryPostgres extends AuthenticationRepository {
   constructor(pool) {

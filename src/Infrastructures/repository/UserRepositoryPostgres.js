@@ -1,4 +1,3 @@
-const { nanoid } = require('nanoid');
 const UserRepository = require('../../Domains/users/UserRepository');
 const RegisteredUser = require('../../Domains/users/entities/RegisteredUser');
 const NotFoundError = require('../../Commons/exceptions/NotFoundError');

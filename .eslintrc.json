@@ -16,6 +16,8 @@
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
     "camelcase": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "no-unused-vars": ["error", { "args": "none" }],
+    "max-len": ["error", { "code": 160 }]
   }
 }
