@@ -111,13 +111,11 @@ const createServer = async (container) => {
         }).code(400);
       }
 
-      if (translatedError.isBoom) {
-        if (!translatedError.isServer) {
-          return h.response({
-            status: 'fail',
-            message: translatedError.message,
-          }).code(translatedError.output.statusCode);
-        }
+      if (translatedError.isBoom && !translatedError.isServer) {
+        return h.response({
+          status: 'fail',
+          message: translatedError.message,
+        }).code(translatedError.output.statusCode);
       }
 
       const response2 = h.response({

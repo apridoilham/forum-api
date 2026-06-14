@@ -17,4 +17,19 @@ describe('UserLogin', () => {
     expect(username).toEqual(payload.username);
     expect(password).toEqual(payload.password);
   });
+
+  it('should throw error when username contains restricted character', () => {
+    const payload = { username: 'dicoding ilham', password: 'secret' };
+    expect(() => new UserLogin(payload)).toThrowError('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
+  });
+
+  it('should throw error when username is more than 50 characters', () => {
+    const payload = { username: 'dicodingindonesiadicodingindonesiadicodingindonesiadicoding', password: 'secret' };
+    expect(() => new UserLogin(payload)).toThrowError('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
+  });
+
+  it('should throw error when username is xxxx', () => {
+    const payload = { username: 'xxxx', password: 'secret' };
+    expect(() => new UserLogin(payload)).toThrowError('USER_LOGIN.NOT_MEET_DATA_SPECIFICATION');
+  });
 });
