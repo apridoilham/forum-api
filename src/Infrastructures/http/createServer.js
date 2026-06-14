@@ -112,10 +112,12 @@ const createServer = async (container) => {
       }
 
       if (translatedError.isBoom) {
-        return h.response({
-          status: 'fail',
-          message: translatedError.message,
-        }).code(translatedError.output.statusCode);
+        if (!translatedError.isServer) {
+          return h.response({
+            status: 'fail',
+            message: translatedError.message,
+          }).code(translatedError.output.statusCode);
+        }
       }
 
       const response2 = h.response({

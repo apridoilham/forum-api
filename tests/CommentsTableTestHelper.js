@@ -12,7 +12,7 @@ const CommentsTableTestHelper = {
   }) {
     const query = {
       text: 'INSERT INTO comments VALUES($1, $2, $3, $4, $5, $6)',
-      values: [id, threadId, owner, content, date, isDeleted],
+      values: [id, threadId, owner, content, isDeleted, date],
     };
 
     await pool.query(query);

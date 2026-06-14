@@ -1,9 +1,9 @@
-const pool = require('../../../../Infrastructures/database/postgres/pool');
-const ThreadsTableTestHelper = require('../../../../../tests/ThreadsTableTestHelper');
-const UsersTableTestHelper = require('../../../../../tests/UsersTableTestHelper');
-const ServerTestHelper = require('../../../../../tests/ServerTestHelper');
-const container = require('../../../../Infrastructures/http/container');
-const createServer = require('../../../../Infrastructures/http/createServer');
+const pool = require('../../../../../Infrastructures/database/postgres/pool');
+const ThreadsTableTestHelper = require('../../../../../../tests/ThreadsTableTestHelper');
+const UsersTableTestHelper = require('../../../../../../tests/UsersTableTestHelper');
+const ServerTestHelper = require('../../../../../../tests/ServerTestHelper');
+const container = require('../../../../../Infrastructures/http/container');
+const createServer = require('../../../../../Infrastructures/http/createServer');
 
 describe('/threads endpoint', () => {
   afterAll(async () => {
