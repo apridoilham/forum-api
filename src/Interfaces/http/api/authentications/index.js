@@ -11,16 +11,25 @@ const authentications = {
         method: 'POST',
         path: '/authentications',
         handler: authenticationsHandler.postAuthenticationHandler,
+        options: {
+          tags: ['api'],
+        },
       },
       {
         method: 'PUT',
         path: '/authentications',
         handler: authenticationsHandler.putAuthenticationHandler,
+        options: {
+          tags: ['api'],
+        },
       },
       {
         method: 'DELETE',
         path: '/authentications',
         handler: authenticationsHandler.deleteAuthenticationHandler,
+        options: {
+          tags: ['api'],
+        },
       },
     ]);
   },

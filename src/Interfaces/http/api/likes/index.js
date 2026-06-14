@@ -13,6 +13,7 @@ const likes = {
         handler: likesHandler.putLikeHandler,
         options: {
           auth: 'forumapi_jwt',
+          tags: ['api'],
         },
       },
     ]);

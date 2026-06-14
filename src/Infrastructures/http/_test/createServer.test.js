@@ -1,7 +1,10 @@
+const Boom = require('@hapi/boom');
+
 const pool = require('../../database/postgres/pool');
 const UsersTableTestHelper = require('../../../../tests/UsersTableTestHelper');
 const container = require('../container');
 const createServer = require('../createServer');
+const AuthenticationError = require('../../../Commons/exceptions/AuthenticationError');
 
 describe('HTTP server', () => {
   afterAll(async () => {
@@ -50,7 +53,6 @@ describe('HTTP server', () => {
   });
 
   it('should handle AuthenticationError correctly', async () => {
-    const AuthenticationError = require('../../../Commons/exceptions/AuthenticationError');
     const server = await createServer({
       getInstance: () => ({
         execute: () => {
@@ -106,7 +108,6 @@ describe('HTTP server', () => {
     const server = await createServer({
       getInstance: () => ({
         execute: () => {
-          const Boom = require('@hapi/boom');
           throw Boom.badRequest('custom boom error');
         },
       }),
@@ -132,7 +133,6 @@ describe('HTTP server', () => {
     const server = await createServer({
       getInstance: () => ({
         execute: () => {
-          const Boom = require('@hapi/boom');
           throw Boom.internal('custom boom server error');
         },
       }),

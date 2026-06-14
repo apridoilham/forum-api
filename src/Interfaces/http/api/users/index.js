@@ -11,6 +11,9 @@ const users = {
         method: 'POST',
         path: '/users',
         handler: usersHandler.postUserHandler,
+        options: {
+          tags: ['api'],
+        },
       },
     ]);
   },

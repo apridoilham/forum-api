@@ -13,6 +13,7 @@ const replies = {
         handler: repliesHandler.postReplyHandler,
         options: {
           auth: 'forumapi_jwt',
+          tags: ['api'],
         },
       },
       {
@@ -21,6 +22,7 @@ const replies = {
         handler: repliesHandler.deleteReplyHandler,
         options: {
           auth: 'forumapi_jwt',
+          tags: ['api'],
         },
       },
     ]);

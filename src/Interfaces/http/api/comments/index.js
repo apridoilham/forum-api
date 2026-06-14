@@ -13,6 +13,7 @@ const comments = {
         handler: commentsHandler.postCommentHandler,
         options: {
           auth: 'forumapi_jwt',
+          tags: ['api'],
         },
       },
       {
@@ -21,6 +22,7 @@ const comments = {
         handler: commentsHandler.deleteCommentHandler,
         options: {
           auth: 'forumapi_jwt',
+          tags: ['api'],
         },
       },
     ]);

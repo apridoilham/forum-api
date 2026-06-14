@@ -13,12 +13,16 @@ const threads = {
         handler: threadsHandler.postThreadHandler,
         options: {
           auth: 'forumapi_jwt',
+          tags: ['api'],
         },
       },
       {
         method: 'GET',
         path: '/threads/{threadId}',
         handler: threadsHandler.getThreadByIdHandler,
+        options: {
+          tags: ['api'],
+        },
       },
     ]);
   },
